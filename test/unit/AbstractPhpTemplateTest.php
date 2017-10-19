@@ -88,8 +88,9 @@ class AbstractPhpTemplateTest extends TestCase
     public function testRenderWithContext()
     {
         $vars = ['var1' => 123];
+        $output = uniqid('output-');
         $context = $this->_createContext();
-        $subject = $this->createInstance('', $vars);
+        $subject = $this->createInstance($output, $vars);
         $subject->expects($this->exactly(1))
                 ->method('_renderWithVars')
                 ->with($this->equalTo($context), $this->equalTo($vars));
@@ -99,6 +100,6 @@ class AbstractPhpTemplateTest extends TestCase
         $_subject = $this->reflect($subject);
 
         $result = $_subject->_renderWithContext($context);
-        echo $result;
+        $this->assertEquals($output, $result, 'Subject did not produce expected output');
     }
 }
