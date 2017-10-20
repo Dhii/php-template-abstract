@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "57ac90dbf0de385439a0ee75126327bb",
+    "content-hash": "b1cfeec95e75334417494d555d8387ee",
     "packages": [
         {
             "name": "dhii/exception",
@@ -405,6 +405,49 @@
             ],
             "description": "Interoperability interface for objects that can be cast to string",
             "time": "2017-01-23T15:08:20+00:00"
+        },
+        {
+            "name": "dhii/validation-interface",
+            "version": "dev-release/0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/validation-interface.git",
+                "reference": "66ae377a818caf7998a9fc2a7b591ba7cf1f4c73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/validation-interface/zipball/66ae377a818caf7998a9fc2a7b591ba7cf1f4c73",
+                "reference": "66ae377a818caf7998a9fc2a7b591ba7cf1f4c73",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/exception-interface": "^0.1",
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Validation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "A base interface for validators",
+            "time": "2017-09-05 13:25:00"
         },
         {
             "name": "psr/container",
@@ -2519,7 +2562,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "dhii/output-renderer-base": 20,
-        "dhii/output-renderer-abstract": 20
+        "dhii/output-renderer-abstract": 20,
+        "dhii/validation-interface": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
