@@ -2,6 +2,7 @@
 
 namespace Dhii\Output;
 
+use DomainException;
 use Psr\Container\ContainerInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Exception as RootException;
