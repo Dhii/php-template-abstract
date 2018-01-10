@@ -181,6 +181,8 @@ trait StandardPhpStructuresTrait
      *
      * @since [*next-version*]
      *
+     * @param mixed $value The value to normalize.
+     *
      * @return string The string representation of the value.
      */
     abstract protected function _normalizeString($value);
