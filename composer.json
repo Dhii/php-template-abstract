@@ -1,6 +1,6 @@
 {
-    "name": "dhii/php-template",
-    "description": "A template implementation that renders a PHP file",
+    "name": "dhii/php-template-abstract",
+    "description": "Abstract functionality for rendering templates written in PHP.",
     "type": "library",
     "license": "MIT",
     "authors": [
