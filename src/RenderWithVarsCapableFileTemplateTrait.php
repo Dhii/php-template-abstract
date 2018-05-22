@@ -2,12 +2,10 @@
 
 namespace Dhii\Output;
 
-use ArrayAccess;
 use Dhii\Exception\InternalExceptionInterface;
 use Dhii\Validation\Exception\ValidationFailedExceptionInterface;
 use InvalidArgumentException;
 use stdClass;
-use Psr\Container\ContainerInterface;
 use Dhii\Util\String\StringableInterface as Stringable;
 use Exception as RootException;
 use Traversable;
@@ -15,28 +13,21 @@ use Traversable;
 trait RenderWithVarsCapableFileTemplateTrait
 {
     /**
-     * Renders this template with with imported variables.
-     *
-     * Inside the closure, the only available variables are:
-     * - `$__vars` - system variable reserved to hold the variable name to value
-     * map, which will have local variables created from.
-     * - `$__path` - system variable reserved to hold the path to the template
-     * file itself.
-     * - Anything that has a key in the `$vars` param.
+     * Renders this template with specified variables.
      *
      * @since [*next-version*]
      *
-     * @param array|ArrayAccess|stdClass|ContainerInterface $context The context to use for rendering.
-     * @param array                                         $vars    The map of variable names to values to make available
-     *                                                               in the template file scope.
+     * @param array $vars The map of variable names to values to make available
+     *                    in the template file scope.
+     *
+     * @throws InternalExceptionInterface If something goes wrong during rendering.
      *
      * @return string|Stringable The output.
      */
-    protected function _renderWithVars(ContainerInterface $context, array $vars = [])
+    protected function _renderWithVars(array $vars = [])
     {
-        $path = $this->_getFilePath($context);
-
         try {
+            $path = $this->_getFilePath();
             $this->_validateTemplateFile($path);
             $include = $this->_isolateFileScope($path);
 
@@ -95,6 +86,22 @@ trait RenderWithVarsCapableFileTemplateTrait
      * @throws ValidationFailedExceptionInterface If the file is invalid.
      */
     abstract protected function _validateTemplateFile($path);
+
+    /**
+     * Normalizes a value to its string representation.
+     *
+     * The values that can be normalized are any scalar values, as well as
+     * {@see StringableInterface).
+     *
+     * @since [*next-version*]
+     *
+     * @param Stringable|string|int|float|bool $subject The value to normalize to string.
+     *
+     * @throws InvalidArgumentException If the value cannot be normalized.
+     *
+     * @return string The string that resulted from normalization.
+     */
+    abstract protected function _normalizeString($subject);
 
     /**
      * Creates a new Internal exception.
