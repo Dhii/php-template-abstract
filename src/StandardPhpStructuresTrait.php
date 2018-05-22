@@ -45,30 +45,6 @@ trait StandardPhpStructuresTrait
     }
 
     /**
-     * Retrieves the function to be used for translation.
-     *
-     * @since [*next-version*]
-     *
-     * @param ContainerInterface $context The current rendering context.
-     *
-     * @return callable The translation function.
-     *                  This function MUST have the following signature:
-     *
-     * translate(string $string, array $args): string
-     *
-     * Where
-     * - `$string` is the subject of translation, and can be any string.
-     * After translation, any `sprintf()` style placeholders will be interpolated.
-     * - `$args` is the optional array of arguments for placeholder interpolation.
-     */
-    protected function _getTranslationFunction(ContainerInterface $context)
-    {
-        return function ($string, $args = []) {
-            return $this->__($string, $args);
-        };
-    }
-
-    /**
      * Retrieves the function to be used for getting values inside the template.
      *
      * @since [*next-version*]
