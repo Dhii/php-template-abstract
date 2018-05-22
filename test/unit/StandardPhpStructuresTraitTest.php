@@ -154,28 +154,6 @@ class StandardPhpStructuresTraitTest extends TestCase
     }
 
     /**
-     * Tests that `_getTranslationFunction()` result produces correct result.
-     *
-     * @since [*next-version*]
-     */
-    public function testGetTranslationFunction()
-    {
-        $data = uniqid('string-');
-        $context = $this->_createContext();
-        $subject = $this->createInstance();
-        $_subject = $this->reflect($subject);
-
-        $subject->expects($this->exactly(1))
-                ->method('__');
-
-        $function = $_subject->_getTranslationFunction($context);
-        $this->assertInternalType('callable', $function, 'The function must be callable');
-
-        $result = $function($data);
-        $this->assertEquals($data, $result, 'The translation function did not produce expected result');
-    }
-
-    /**
      * Tests that `_getValueFunction()` result produces correct result.
      *
      * @since [*next-version*]
