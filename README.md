@@ -1,15 +1,11 @@
-# Dhii - PHP Template
+# Dhii - PHP Template - Abstract
 
-[![Build Status](https://travis-ci.org/dhii/php-template.svg?branch=master)](https://travis-ci.org/dhii/php-template)
-[![Code Climate](https://codeclimate.com/github/dhii/php-template/badges/gpa.svg)](https://codeclimate.com/github/dhii/php-template)
-[![Test Coverage](https://codeclimate.com/github/dhii/php-template/badges/coverage.svg)](https://codeclimate.com/github/dhii/php-template/coverage)
-[![Latest Stable Version](https://poser.pugx.org/dhii/php-template/version)](https://packagist.org/packages/dhii/php-template)
+[![Build Status](https://travis-ci.org/dhii/php-template-abstract.svg?branch=master)](https://travis-ci.org/dhii/php-template-abstract)
+[![Code Climate](https://codeclimate.com/github/dhii/php-template-abstract/badges/gpa.svg)](https://codeclimate.com/github/dhii/php-template-abstract)
+[![Test Coverage](https://codeclimate.com/github/dhii/php-template-abstract/badges/coverage.svg)](https://codeclimate.com/github/dhii/php-template-abstract/coverage)
+[![Latest Stable Version](https://poser.pugx.org/dhii/php-template-abstract/version)](https://packagist.org/packages/dhii/php-template-abstract)
 [![This package complies with Dhii standards](https://img.shields.io/badge/Dhii-Compliant-green.svg?style=flat-square)][Dhii]
 
-A template implementation that renders a PHP file.
-
-## Details
-Also known as PHTML, this approach to templating treats a file as a mixture of
-HTML and PHP. Any output produced in the template becomes the result
+Abstract functionality for rendering templates written in PHP.
 
 [Dhii]: https://github.com/Dhii/dhii
