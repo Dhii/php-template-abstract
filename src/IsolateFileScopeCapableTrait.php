@@ -29,7 +29,7 @@ trait IsolateFileScopeCapableTrait
         $fn = function (array $____vars) use ($____file) {
             extract($____vars, EXTR_SKIP);
 
-            return require($____file);
+            return require $____file;
         };
         $fn->bindTo(null);
 
