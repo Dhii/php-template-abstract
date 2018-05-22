@@ -31,6 +31,12 @@
             "Dhii\\Output\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Dhii\\Output\\UnitTest\\": "test/unit",
+            "Dhii\\Output\\FuncTest\\": "test/functional"
+        }
+    },
     "scripts": {
         "test": "phpunit",
         "csfix": "php-cs-fixer fix -vvv"
